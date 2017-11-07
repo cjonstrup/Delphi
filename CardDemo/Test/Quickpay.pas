@@ -1,6 +1,7 @@
 unit Quickpay;
 
 interface
+
 uses
   DUnitX.TestFramework,
   ICardInterface,
