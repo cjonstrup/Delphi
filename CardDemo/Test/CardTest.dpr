@@ -11,7 +11,7 @@ uses
   DUnitX.Loggers.Console,
   DUnitX.Loggers.Xml.NUnit,
   DUnitX.TestFramework,
-  Unit5 in 'Unit5.pas';
+  Dibs in 'Dibs.pas';
 
 var
   runner : ITestRunner;

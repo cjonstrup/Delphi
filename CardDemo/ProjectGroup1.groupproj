@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A7E0FB74-BD1B-4D7D-8510-4D9E3E64CF4A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CardDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\CardTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CardDemo">
+        <MSBuild Projects="CardDemo.dproj"/>
+    </Target>
+    <Target Name="CardDemo:Clean">
+        <MSBuild Projects="CardDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CardDemo:Make">
+        <MSBuild Projects="CardDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CardTest">
+        <MSBuild Projects="Test\CardTest.dproj"/>
+    </Target>
+    <Target Name="CardTest:Clean">
+        <MSBuild Projects="Test\CardTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CardTest:Make">
+        <MSBuild Projects="Test\CardTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CardDemo;CardTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CardDemo:Clean;CardTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CardDemo:Make;CardTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

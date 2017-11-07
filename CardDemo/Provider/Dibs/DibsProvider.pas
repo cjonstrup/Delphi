@@ -26,7 +26,7 @@ begin
   if AValue <= 0 then
   begin
     AResponse := 'Dibs collect fail';
-    Result := True;
+    Result := False;
   end;
 end;
 

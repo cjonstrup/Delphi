@@ -2,29 +2,28 @@ unit Dibs;
 
 interface
 uses
-  DUnitX.TestFramework;
+  DUnitX.TestFramework,
+  ICardInterface,
+  DibsProvider;
 
 type
 
-  [TestFixture]
+  [TestFixture('Dibs','General Example Tests')]
   TDibsTest = class(TObject)
   private
-    //Card: ICard;
+    Card: ICard;
 
   public
     [Setup]
     procedure Setup;
     [TearDown]
     procedure TearDown;
-    // Sample Methods
-    // Simple single Test
-    [Test]
-    procedure Test1;
+
     // Test with TestCase Attribute to supply parameters.
     [Test]
-    [TestCase('TestA','1,2')]
-    [TestCase('TestB','3,4')]
-    procedure Test2(const AValue1 : Integer;const AValue2 : Integer);
+    [TestCase('TestA', '120')]
+    [TestCase('TestB', '-45.67')]
+    procedure Collect(const AValue1 : double);
   end;
 
 implementation
@@ -33,25 +32,30 @@ implementation
 
 { TDibsTest }
 
+procedure TDibsTest.Collect(const AValue1: double);
+var
+  Result: string;
+begin
+  if AValue1 > 0 then
+  begin
+    Assert.IsTrue(Card.Collect(AValue1, Result));
+  end;
+
+  if AValue1 < 0 then
+  begin
+    Assert.IsFalse(Card.Collect(AValue1, Result));
+  end;
+end;
+
 procedure TDibsTest.Setup;
 begin
-
+  Card := TDibs.Create;
 end;
 
 procedure TDibsTest.TearDown;
 begin
-
 end;
 
-procedure TDibsTest.Test1;
-begin
-
-end;
-
-procedure TDibsTest.Test2(const AValue1, AValue2: Integer);
-begin
-
-end;
 
 initialization
   TDUnitX.RegisterTestFixture(TDibsTest);

@@ -5,7 +5,9 @@ uses
   Vcl.Forms,
   Bootstrap in 'Bootstrap.pas',
   Main in 'Main.pas' {FormMain},
-  ICardInterface in 'ICardInterface.pas';
+  ICardInterface in 'Provider\ICardInterface.pas',
+  DibsProvider in 'Provider\Dibs\DibsProvider.pas',
+  QuickpayProvider in 'Provider\Quickpay\QuickpayProvider.pas';
 
 {$R *.res}
 
