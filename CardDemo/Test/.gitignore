@@ -7,7 +7,6 @@
 *.skincfg
 *.stat
 *.tvsconfig
-*.dproj.local
 __history/
 __recovery/
 
@@ -21,5 +20,3 @@ __recovery/
 *.tds
 
 Win32/*
-__history/*
-
