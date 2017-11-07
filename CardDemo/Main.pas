@@ -37,7 +37,9 @@ begin
   if Card.Collect(strtofloat(EditAmount.Text), Response) then
   begin
     StatusBar1.SimpleText := Response;
-  end;
+  end
+  else
+    StatusBar1.SimpleText := Response;
 end;
 
 procedure TFormMain.CardProvidersClick(Sender: TObject);

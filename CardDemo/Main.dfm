@@ -31,7 +31,7 @@ object FormMain: TFormMain
     Width = 121
     Height = 21
     TabOrder = 1
-    Text = '0.00'
+    Text = '0,00'
   end
   object BtnCollect: TButton
     Left = 143
@@ -50,8 +50,5 @@ object FormMain: TFormMain
     Height = 19
     Panels = <>
     SimplePanel = True
-    ExplicitLeft = 296
-    ExplicitTop = 192
-    ExplicitWidth = 0
   end
 end

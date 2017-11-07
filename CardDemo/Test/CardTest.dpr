@@ -11,7 +11,8 @@ uses
   DUnitX.Loggers.Console,
   DUnitX.Loggers.Xml.NUnit,
   DUnitX.TestFramework,
-  Dibs in 'Dibs.pas';
+  Dibs in 'Dibs.pas',
+  Quickpay in 'Quickpay.pas';
 
 var
   runner : ITestRunner;
