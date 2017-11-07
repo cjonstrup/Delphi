@@ -50,7 +50,7 @@ end;
 
 procedure TDibsTest.Setup;
 begin
-  Card := TDibs.Create;
+  Card := TDibs.Create('key');
 end;
 
 procedure TDibsTest.TearDown;

@@ -19,7 +19,7 @@ begin
   aContainer.RegisterType<TDibs>.Implements<ICard>('dibs').DelegateTo(
                                                                         function : TDibs
                                                                         begin
-                                                                          Result := TDibs.Create('dsfsdsffds');
+                                                                          Result := TDibs.Create('hashkey');
                                                                         end
                                                                       );
 

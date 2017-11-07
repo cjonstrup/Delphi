@@ -50,7 +50,7 @@ end;
 
 procedure TQuickpayTest.Setup;
 begin
-  Card := TQuickpay.Create;
+  Card := TQuickpay.Create('key');
 end;
 
 procedure TQuickpayTest.TearDown;

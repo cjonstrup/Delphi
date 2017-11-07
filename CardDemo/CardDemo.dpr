@@ -17,16 +17,10 @@ var
 
 begin
   Container := GlobalContainer;
-
   BuildUpContainer(Container);
-
-  //Card := GlobalContainer.Resolve<ICard>('dibs');
-
-  //Card.Collect(234);
 
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TFormMain, FormMain);
   Application.Run;
 end.

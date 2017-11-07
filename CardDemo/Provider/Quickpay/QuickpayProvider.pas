@@ -7,8 +7,12 @@ uses
 
 type
    TQuickpay = class(TInterfacedObject, ICard)
+   private
+     LKey: string;
    public
      function Collect(AValue: double; out AResponse: string) : Boolean;
+     constructor Create(AKey: string);
+     destructor Destroy; override;
    end;
 
 implementation
@@ -25,6 +29,17 @@ begin
     AResponse := 'Quickpay collect fail';
     Result := False;
   end;
+end;
+
+constructor TQuickpay.Create(AKey: string);
+begin
+  LKey := AKey;
+end;
+
+destructor TQuickpay.Destroy;
+begin
+
+  inherited;
 end;
 
 end.
